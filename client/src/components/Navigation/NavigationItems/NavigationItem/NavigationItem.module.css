@@ -1,0 +1,16 @@
+@import url(//db.onlinewebfonts.com/c/6c231d42868e5c7826ac7c8607d428cb?family=Alien+League);
+
+
+.toolbarFormatting {
+    font-size: 20px;
+    padding: 0px 10px;
+    color: #F975F7;
+    font-weight: bold;
+    font-family:  "Alien League";
+}
+
+.toolbarFormatting:hover {
+    color: #0064d6;
+    text-decoration: none;
+    font-weight: bold;
+}

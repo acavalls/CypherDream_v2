@@ -1,0 +1,107 @@
+h3 {
+    margin-top: 80px;
+    margin-left: 10px;
+    text-align: left;
+    font-size: 36px; 
+    color : #0064d6;
+    font-family: "Alien League";
+}
+
+.area {
+    color: #F975F7;
+    margin-top: 40px;
+    margin-left: 10px;
+    text-align: left;
+    font-size: 32px; 
+    font-family: "Alien League"; 
+    font-weight: bold;
+}
+
+.FirstLayer {
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: left;
+    font-size: 18px; 
+}
+
+.SecondLayer {
+    margin-left: 30px;
+    text-align: left;
+    font-size: 18px; 
+}
+
+.link {
+    font-weight: bold;
+    font-size: 16px; 
+    text-decoration: underline;
+}
+
+.link:hover {
+    text-decoration: none;
+    color: #F975F7;
+    text-decoration: underline;
+}
+
+.Note {
+    font-size: 18px; 
+    font-weight: bold;
+    color : #0064d6;
+    font-family: "Alien League";
+}
+
+.setFont {
+    font-size: 24px; 
+    font-weight: bold;
+    font-family: "Alien League";
+}
+
+.setFontSub {
+    font-size: 18px; 
+    font-weight: bold;
+    font-family: "Alien League";
+}
+
+@media only screen and (max-width: 580px) {
+    h3 {
+        margin-top: 80px;
+        margin-left: 5px;
+        text-align: left;
+        font-size: 28px; 
+        color : #0064d6;
+        font-family: "Alien League";
+    }
+    .area {
+        color: #F975F7;
+        margin-top: 40px;
+        margin-left: 5px;
+        text-align: left;
+        font-size: 16px; 
+        font-weight: bold;
+        font-family: "Alien League"; 
+    }
+    .FirstLayer {
+        margin-left: 2px;
+        margin-right: 2px;
+        text-align: left;
+        font-size: 12px; 
+    }
+
+    .link {
+        font-weight: bold;
+        font-size: 12px; 
+        text-decoration: underline;
+        display: block;
+    }
+
+    .setFont {
+        font-size: 14px; 
+        font-weight: bold;
+        font-family: "Alien League";
+    }
+    
+    .setFontSub {
+        font-size: 14px; 
+        font-weight: bold;
+        font-family: "Alien League";
+    }
+  }

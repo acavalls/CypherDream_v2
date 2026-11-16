@@ -1,0 +1,148 @@
+.Display {
+    margin-top: 72px;
+    margin-left: 10px;
+}
+
+.SearchResults {
+    padding: 16px 16px;
+    border: 2px solid rgb(0, 162, 255);
+    box-shadow: 0 2px 3px rgba(0, 102, 255, 0.877);
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+.SearchResults:hover,
+.SearchResults:active {
+    background-color: rgb(246, 234, 247);
+}
+
+.Attributes {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    font-family: 'Alien League';
+}
+
+.Elements {
+    display: flex;
+    flex-flow: row;
+}
+
+.ButtonDisplay {
+    display: inline-flex;
+}
+
+.ButtonStyle {
+    background-color: #0064d6;
+    cursor: pointer;
+    font-family: 'Alien League';
+    font-weight: bold;
+    color: white;
+}
+.ButtonStyle:hover {
+    background-color: purple;
+    color: white;
+}
+
+.Display2 {
+    display: block;
+    width: 100%;
+}
+
+.InputElement {
+    margin-top: 10px;
+    outline: none;
+    border: 1px solid #ccc;
+    background-color: white;
+    font: inherit;
+    padding: 6px 10px;
+    height: 15%;
+    width: 150px;
+    box-sizing: border-box;
+}
+
+.ButtonStyle {
+    background-color: #0064d6;
+    cursor: pointer;
+    font-family: 'Alien League';
+    font-weight: bold;
+    color: white;
+}
+.ButtonStyle:hover {
+    background-color: purple;
+    color: white;
+}
+
+.ButtonDisplay {
+    display: inline-flex;
+}
+
+.Status {
+    font-weight: bold;
+    font-family: 'Alien League';
+    outline: none;
+    width: 100%;
+}
+
+.Back {
+    margin-top: 15px;
+    margin-left: 10px;
+    font-weight: none;
+    text-decoration: underline;
+    color: rgb(0, 26, 255);
+    font-size: 20px;
+}
+
+.Back:hover {
+    color: purple;
+    cursor: pointer;
+}
+
+h3 {
+    margin-top: 80px;
+    margin-left: 10px;
+    text-align: left;
+    font-size: 36px; 
+    color : #0064d6;
+    font-family: "Alien League";
+}
+
+.Price {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.id {
+    font-size: 14px;
+}
+
+@media only screen and (max-width: 580px) {
+    .Back {
+        margin-left: 5px;
+        font-size: 15px;
+        text-decoration: underline;
+        font-family: 'Alien League';
+        color: rgb(0, 26, 255);
+    }
+    .Attributes {
+        font-size: 12px;
+        display: block;
+        text-align: left;
+        font-weight: bold;
+        font-family: 'Alien League';
+    }
+    .Status {
+        font-size: 12px;
+        font-weight: bold;
+        font-family: 'Alien League';
+        outline: none;
+        width: 100%;
+    }
+    .Price {
+        font-size: 15px;
+        font-weight: bold;
+    }
+    .id {
+        font-size: 11px;
+    }
+}

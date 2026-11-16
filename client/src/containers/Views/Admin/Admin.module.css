@@ -1,0 +1,45 @@
+.Button {
+    background-color:#0064d6;
+    cursor: pointer;
+    font-family: 'Alien League';
+    font-weight: bold;
+    color: white;
+    width: 100px;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+.Button:hover {
+    background-color: purple;
+    color: white;
+}
+
+.font {
+    margin-left: 10px;
+    text-align: left;
+    font-size: 24px; 
+    font-family: "Alien League";
+}
+
+.InputElement {
+    margin-left: 10px;
+    outline: none;
+    border: 1px solid #ccc;
+    background-color: white;
+    padding: 6px 10px;
+    width: 320px;
+    box-sizing: border-box;
+    font-family: "Alien League";
+}
+
+.Refresh {
+    display: inline-flex;
+    margin-left: 10px;
+    text-decoration: underline;
+    color: rgb(0, 26, 255);
+}
+.Refresh:hover {
+    color: red;
+    cursor: pointer;
+}

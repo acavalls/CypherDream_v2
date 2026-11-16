@@ -1,0 +1,172 @@
+@import url(//db.onlinewebfonts.com/c/6c231d42868e5c7826ac7c8607d428cb?family=Alien+League);
+
+  .hometitle {
+    margin-top: 28px;
+    text-align: center;
+    font-size: 45px; 
+    font-family:  "Alien League";
+  }
+
+  .man {
+    margin-top: -20px;
+    width: 100%;
+    height: auto;
+  }
+
+
+  .whatIsCypherDream {
+    color: white;
+    background: url(retro.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    height: auto;
+    width: 100%;
+  }
+
+  .fontContent {
+    font-size: 1.3em;
+    font-weight: bold;
+    text-align: justify;
+  }
+
+  .fontTitle {
+    font-size: 3em;
+    font-weight: bold;
+  }
+
+  .carouselImg {
+    height: auto;
+    width: 100%;
+  }
+
+  .positioning {
+    position: relative; /* To help the image + text element to get along with the rest of the page*/ 
+  }
+
+  .image { 
+    width: 100%; /* for IE 6 */
+    height: auto;
+  } 
+
+  .spacer { 
+    position: absolute; /* To place the text on the image*/
+    top: 20px; /* The exact location of the text from the top of the image*/
+    text-align: center;
+    width: 100%; 
+    color: white; 
+    font-size: 36px; 
+    font-weight: bold;
+    font-family:  "Alien League";
+  }
+
+  .marketplaceTitle { 
+    position: absolute; /* To place the text on the image*/
+    top: 25px; /* The exact location of the text from the top of the image*/
+    padding-left: 50px;
+    text-align: left;
+    width: 100%; 
+    font-size: 32px; 
+    font-weight: bold;
+    font-family:  "Alien League";
+  }
+
+  .marketplaceButton {  
+    margin-bottom: 50px;
+  }
+
+  @media only screen and (max-width: 580px) {
+    .hometitle {
+      margin-top: 28px;
+      text-align: center;
+      font-size: 24px; 
+      font-family:  "Alien League";
+    }
+    .man {
+      margin-top: -10px;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  @media only screen and (min-width: 580px) and (max-width: 768px) {
+    .fontContent {
+      font-size: 1em;
+      font-weight: bold;
+      text-align: justify;
+    }
+  
+    .fontTitle {
+      font-size: 2.5em;
+      font-weight: bold;
+    }
+
+    .marketplaceTitle { 
+      position: absolute; /* To place the text on the image*/
+      top: 20px; /* The exact location of the text from the top of the image*/
+      padding-left: 25px;
+      padding-bottom: 20px;
+      text-align: left;
+      width: 100%; 
+      font-size: 30px; 
+      font-weight: bold;
+      font-family:  "Alien League";
+    }
+
+  }
+
+  @media only screen and (max-width: 580px) {
+    .fontContent {
+      font-size: 0.8em;
+      font-weight: bold;
+      text-align: justify;
+      padding: 15px;
+    }
+  
+    .fontTitle {
+      font-size: 1.9em;
+      font-weight: bold;
+    }
+
+    .marketplaceTitle { 
+      position: absolute; /* To place the text on the image*/
+      top: 15px; /* The exact location of the text from the top of the image*/
+      padding-left: 20px;
+      padding-bottom: 15px;
+      text-align: left;
+      width: 100%; 
+      font-size: 24px; 
+      font-weight: bold;
+      font-family:  "Alien League";
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    .marketplaceTitle { 
+      position: absolute; /* To place the text on the image*/
+      top: 5px; /* The exact location of the text from the top of the image*/
+      padding-left: 10px;
+      padding-bottom: 5px;
+      text-align: left;
+      width: 100%; 
+      font-size: 18px; 
+      font-weight: bold;
+      font-family:  "Alien League";
+    }
+
+    .spacer { 
+      position: absolute; /* To place the text on the image*/
+      top: 10px; /* The exact location of the text from the top of the image*/
+      text-align: center;
+      width: 100%; 
+      color: white; 
+      font-size: 24px; 
+      font-weight: bold;
+      font-family:  "Alien League";
+    }
+  }
+
+
+
+
+  

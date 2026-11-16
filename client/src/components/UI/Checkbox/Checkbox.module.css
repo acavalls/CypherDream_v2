@@ -1,0 +1,9 @@
+/* Create a custom checkbox */
+  .checkmark {
+    margin-top: 5px;
+    margin-left: 2px;
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+  }
+  

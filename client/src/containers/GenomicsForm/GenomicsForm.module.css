@@ -1,0 +1,59 @@
+.Button {
+    background-color: #0064d6;
+    cursor: pointer;
+    margin-right: 20px;
+    font-family: 'Alien League';
+    font-weight: bold;
+    color: white;
+}
+.Button:hover {
+    background-color: purple;
+    color: white;
+}
+
+.Results {
+    color: purple;
+}
+
+.LoadingBox {
+    height: 30%;
+    width: 30%;
+    top: 35%;
+    left: 35%;
+    position: fixed;
+    z-index: 500;
+    background-color: #fff;
+    border: 2px solid rgb(0, 26, 255);
+    box-sizing: border-box;
+}
+
+.msg {
+    color: black;
+    font-family: 'Alien League';
+    display: inline-flex;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.Back {
+    text-decoration: underline;
+    font-family: 'Alien League';
+    color: rgb(0, 26, 255);
+}
+.Back:hover {
+    color: purple;
+    cursor: pointer;
+}
+
+.flexDisplay {
+    display: flex;
+}
+
+.noResults {
+    margin-left: 10px;
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    font-family: 'Alien League';
+}

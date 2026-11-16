@@ -1,0 +1,26 @@
+.Input {
+    width: 100%;
+    padding: 4px;
+    box-sizing: border-box;
+}
+
+.Label {
+    font-family: 'Alien League';
+    font-weight: bold;
+    display: block;
+}
+
+.InputElement {
+    outline: none;
+    border: 1px solid #F975F7;
+    background-color: white;
+    padding: 6px 10px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.InputElement:focus {
+    outline: none;
+    background-color: rgb(200, 232, 236);
+}

@@ -1,0 +1,53 @@
+.SearchResults {
+    padding: 16px 16px;
+    border: 2px solid rgb(0, 162, 255);
+    box-shadow: 0 2px 3px rgba(0, 102, 255, 0.877);
+    margin: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.SearchResults:hover,
+.SearchResults:active {
+    background-color: rgb(246, 234, 247);
+}
+
+.Attributes {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    font-family: 'Alien League';
+}
+
+.Buy {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-family: 'Alien League';
+}
+
+.Button {
+    background-color: #0064d6;
+    cursor: pointer;
+    font-family: 'Alien League';
+    font-weight: bold;
+    color: white;
+}
+.Button:hover {
+    background-color: purple;
+    color: white;
+}
+
+@media only screen and (max-width: 680px) {
+    .Attributes {
+        font-size: 12px;
+        display: block;
+        text-align: left;
+        font-weight: bold;
+        font-family: 'Alien League';
+    }
+    h3 {
+        font-size: 20px;
+        font-weight: bold;
+    }
+}

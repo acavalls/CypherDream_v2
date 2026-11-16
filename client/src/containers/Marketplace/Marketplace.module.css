@@ -1,0 +1,54 @@
+h2 {
+    margin-top: 80px;
+    margin-left: 10px;
+    text-align: left;
+    font-size: 36px; 
+    color : #0064d6;
+    font-family: "Alien League";
+}
+
+h4 {
+    margin-top: 28px;
+    margin-left: 10px;
+    text-align: left;
+    font-size: 24px; 
+    font-family: "Alien League";
+}
+
+a {
+    font-size: 28px; 
+    color : #F975F7;
+    font-family: "Alien League";
+}
+
+a:hover {
+    color: #0064d6;
+    text-decoration: none;
+    
+}
+
+@media only screen and (max-width: 580px) {
+    h2 {
+        margin-top: 80px;
+        margin-left: 10px;
+        text-align: left;
+        font-size: 28px; 
+        color : #0064d6;
+        font-family: "Alien League";
+    }
+
+    h4 {
+        margin-top: 28px;
+        margin-left: 10px;
+        text-align: left;
+        font-size: 20px; 
+        font-family: "Alien League";
+    }
+
+    a {
+        margin-left: 5px;
+        font-size: 22px; 
+        color : #F975F7;
+        font-family: "Alien League";
+    }
+}

@@ -1,0 +1,13 @@
+.Button {
+    background-color: #0064d6;
+    cursor: pointer;
+    font-family: 'Alien League';
+    font-weight: bold;
+    color: white;
+}
+
+.Button:hover {
+    background-color: purple;
+    color: white;
+}
+
