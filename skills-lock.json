@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "skills": {
+    "solidity": {
+      "source": "Mindrally/skills",
+      "commit": "7682ca77710e0971eab4e0ae5dddfa281aea0ba5",
+      "sourceType": "github",
+      "skillPath": "solidity/SKILL.md",
+      "computedHash": "779d38017c69d96c69dfd83730a0f5af9d97f2ad84ab10d17a94d4dd72ce34ca"
+    }
+  }
+}
