@@ -264,11 +264,11 @@
 - Evidencia: algoritmo boolMatch en GenomicsForm.js:131-165 (idéntico en DicomForm.js:127-161).
 - Clasificación: INTENCIONAL — dos algoritmos deliberados con casilla que los conmuta (GenomicsForm.js:299-301).
 
-**RN-40 — Búsqueda «parcial»: filtra también por los campos vacíos, lo que anula los resultados.**
-- Regla: con la casilla de coincidencia parcial marcada, el filtro se aplica a TODOS los campos incluidos los vacíos: cualquier campo en blanco exige que el registro tenga ese campo vacío.
-- Ejemplo: buscar solo Data=VCF (Address, Age, Country, Gender vacíos) → formData incluye `Address: ""` → ningún registro del índice tiene Address vacío → resultado: «No results were founded», aunque haya VCFs.
-- Evidencia: recogida de TODOS los campos (GenomicsForm.js:100-102) y filtro por igualdad exacta campo a campo (112-118); idéntico en DicomForm.js:96-116.
-- Clasificación: ACCIDENTAL — contradice el nombre «partial matching» que promete lo contrario (más resultados, no menos). DISCREPANCIA nombre/comportamiento: hallazgo.
+**RN-40 — Búsqueda «parcial»: basta con que el registro coincida con UNO de los criterios (unión); el «total» exige todos (intersección).**
+- Regla: con la casilla marcada, cada campo (relleno o vacío) genera un filtro propio y se CONCATENAN los resultados: pasa un registro que cumpla cualquier criterio; sin casilla, solo pasan los registros que cumplen todos los criterios rellenados a la vez.
+- Ejemplo: base = {R1: Age 30, Country España, Data VCF; R2: Age 40, Country Francia, Data VCF}. Búsqueda Age=30, Country=Francia, Data=VCF: parcial devuelve R1 Y R2 (R1 cumple Age, R2 cumple Country), total devuelve NINGUNO (R1 falla Country, R2 falla Age).
+- Evidencia: recogida de todos los campos y concatenación de filtros con deduplicación (GenomicsForm.js:100-120); intersección por registro (GenomicsForm.js:132-158); idéntico en DicomForm.js:96-116 y 128-154.
+- Clasificación: INTENCIONAL — la casilla conmuta dos semánticas deliberadas (unión/intersección); el nombre «partial matching» describe bien la unión. La divergencia entre ambas para la misma entrada se documenta en contradiccion-02.
 
 **RN-41 — El importe que el comprador ofrece lo fija el índice, no el contrato.**
 - Regla: el value de la compra se calcula con el precio del registro de Firebase; el contrato solo valida que alcance su propio precio.
@@ -352,7 +352,7 @@
 2. Tutorial promete reenvío de claves tras rechazo; el contrato lo bloquea (Tutorial.js:211-213 vs Marketplace.sol:194) — RN-20, RN-24.
 3. Tutorial promete arbitraje y baneos; no existe en el contrato (Tutorial.js:211-213, 227-230) — RN-35.
 4. Tests históricos asumen 10 segundos de custodia; hoy 5 minutos (test/TestMarketplace.js:337 vs Marketplace.sol:35) — RN-29.
-5. «Partial matching» se comporta como filtro restrictivo con campos vacíos (GenomicsForm.js:100-120) — RN-40.
+5. Las dos semánticas de búsqueda (unión parcial vs intersección total) producen resultados distintos para la misma entrada con 2+ criterios (GenomicsForm.js:100-120 vs 132-158) — RN-40, contradiccion-02.
 6. La seed documentada como paso obligatorio no participa en el cifrado (Tutorial.js:111 vs Forms.js:355) — RN-44.
 7. El comentario del precio cita un contrato MyERC721 inexistente (Forms.js:180) — RN-23.
 8. El marketing promete descentralización total; existe propietario con pausa, comisión 5 % y autodestrucción (Home.js:42-44 vs Marketplace.sol:223-230, Destructible.sol:18-24) — RN-51.

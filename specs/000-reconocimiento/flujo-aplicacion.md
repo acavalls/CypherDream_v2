@@ -590,24 +590,23 @@ GenomicsForm.js:299-301):
 - **Caso A (casilla marcada — "partial matching")**: recoge TODOS los
   campos del formulario, incluidos los vacíos (GenomicsForm.js:99-102);
   filtra la base completa una vez por campo con igualdad exacta
-  (`formData[key] === el[key]`) y concatena los resultados; elimina vacíos
-  y duplicados (GenomicsForm.js:104-120). **SUPOSICIÓN/rareza**: al incluir
-  los campos vacíos, el filtro por `Address === ""` (o `Gender === ""`)
-  devuelve vacío y `reduce` sobre arrays vacíos produce `[]`: con cualquier
-  campo en blanco el resultado tiende a ser vacío aunque la base tenga
-  coincidencias parciales (GenomicsForm.js:100-120). Rareza registrada como
-  A-10.
+  (`formData[key] === el[key]`) y CONCATENA los resultados de todos los
+  filtros (un registro pasa si coincide con AL MENOS UN criterio; los
+  criterios vacíos aportan arrays vacíos que no estorban); elimina
+  duplicados (GenomicsForm.js:104-120). Semántica de UNIÓN (OR).
 - **Caso B (casilla sin marcar — "total matching")**: recoge solo los
   campos NO vacíos (GenomicsForm.js:132-136) y marca cada registro de la
   base como `false` si algún campo pedido no coincide, `true` en caso
   contrario (GenomicsForm.js:138-149); solo pasan los registros
-  `boolMatch === true` (GenomicsForm.js:151-158).
+  `boolMatch === true`. Semántica de INTERSECCIÓN (AND sobre los campos
+  no vacíos).
 - **[MISMO-OBJETIVO, CÓDIGO DISTINTO]** Ambos caminos implementan "buscar
   en el índice y devolver resultados", con dos algoritmos distintos
-  (concatenación de filtros por campo vs intersectar por registro) y,
-  además, semántica de entrada distinta (A usa también campos vacíos, B no).
-  El código de ambos caminos está duplicado línea a línea entre
-  GenomicsForm.js:93-166 y DicomForm.js:89-162. Ver índice 8.9.
+  (unión de filtros por campo vs intersección por registro). Coinciden
+  con 0 o 1 criterio relleno y DIFIEREN a partir de 2 (ver
+  contradiccion-02-busqueda-parcial-vs-total.md). El código de ambos
+  caminos está duplicado línea a línea entre GenomicsForm.js:93-166 y
+  DicomForm.js:89-162 (ver contradiccion-03-busqueda-genomics-dicom.md).
 
 ### 7.2 Resultados
 
@@ -707,6 +706,11 @@ reversiones de contraseña (5.3.4, inalcanzable en UI).
 | 8.8 | Render condicional muerto vs acordeón Bootstrap en Marketplace | Mostrar GenomicsForm y DicomForm | Marketplace.js:24-39 vs 48-83 |
 | 8.9 | Partial matching vs total matching (búsqueda) | Buscar en el índice Firebase; algoritmos distintos y duplicados entre GenomicsForm y DicomForm | GenomicsForm.js:98-127 vs 131-165; DicomForm.js:94-123 vs 127-161 |
 
+Cada punto anterior con divergencia real está desarrollado, comparado paso
+a paso y cuantificado en los ficheros
+`specs/000-reconocimiento/contradiccion-01..14-*.md` (14 duplicidades de
+conceptos de negocio).
+
 ---
 
 ## 9. Rarezas y hallazgos nuevos de este recorrido (pendientes de registro)
@@ -723,8 +727,10 @@ registro:
 - **"Up to 5 days" vs 5 minutos**: la UI avisa de un periodo de recuperación
   de 5 días y el contrato fija 5 minutos (GenomicsForm.js:244-245 vs
   Marketplace.sol:35).
-- **Partial matching con campos vacíos**: el camino parcial filtra también
-  por campos vacíos (GenomicsForm.js:100-120; DicomForm.js:96-116).
+- **Semánticas de búsqueda enfrentadas**: "partial matching" es una unión
+  de criterios y "total matching" una intersección; para la misma entrada
+  producen resultados distintos a partir de 2 criterios
+  (contradiccion-02).
 - **Vista Admin oculta para admin+dataOwner**: sobrescritura de `message`
   en Profile (Profile.js:13-25).
 - Observaciones ya documentadas y re-confirmadas aquí por el recorrido:
