@@ -13,7 +13,7 @@
 | `contradiccion-01..14-*.md` | Leídas íntegras | Mapeadas en A-02, A-11, A-16, A-18 a A-28 |
 | `registro-riesgos.md` (R1 a R23) | Leído íntegro | Mapeadas en A-01 a A-21, A-29, A-33, A-34 |
 | `memoria-historica.md` (secciones 1-5) | Leída íntegra | Discrepancias y "no tocar": A-07, A-14, A-15, A-21, A-23, A-24, A-29 a A-40 |
-| `entrevista-negocio.md` | **NO EXISTE** (declarada como fuente; no hay fichero en el repo a 2026-11-17) | Sus respuestas, cuando existan, podrán cerrar clasificaciones PENDIENTES |
+| `entrevista-negocio.md` | **EXISTE desde 2026-11-18** (acta de la entrevista del 2026-11-18; conduce la actualización de este registro del mismo día) | Cerró 19 cuestiones, dejó 5 abiertas y descartó la arqueología de datos (ver «Actualización» de cada entrada y la sección «Estado tras la entrevista») |
 | Arqueología de datos (consultas a Firebase/cadena) | **NO EJECUTADA** | No hay testigo DATOS en ninguna entrada |
 
 Consecuencia de regla innegociable: solo se dispone del testigo CÓDIGO
@@ -49,6 +49,14 @@ resultado; no disponible en todo el registro), **NEGOCIO** (quién y cuándo).
   para deals ya cerrados.
 - Decisión pendiente: ¿quién decide la política de disputas (rechazo,
   arbitraje)? Responsable: negocio.
+- **Actualización 2026-11-18** (acta entrevista-negocio.md, P2/P2a/P2b,
+  testigo NEGOCIO: RG): decidido — política de disputas = sistema de
+  validación del buen actor, automático primero y humano en apelación, con
+  el dinero **congelado hasta el veredicto** (nadie cobra aunque venza el
+  plazo). El sistema de validación nunca llegó a implementarse (testimonio
+  del negocio; coincide con la promesa de Tutorial.js:211-213). La
+  inaccesibilidad del rechazo sigue BUG A SECAS; la decisión de política
+  queda CERRADA.
 
 ## A-02 — La compra por DICOM no registra la clave pública: deals sin entrega posible
 
@@ -65,6 +73,10 @@ resultado; no disponible en todo el registro), **NEGOCIO** (quién y cuándo).
   recuperación (A-01).
 - Decisión pendiente: ¿DICOM es una vía de negocio viva o en desuso?
   Responsable: negocio.
+- **Actualización 2026-11-18** (acta, P4, NEGOCIO: RC): DICOM es **vía
+  comercial viva** — hay que arreglar el registro de clave pública. CERRADA
+  con prioridad elevada; los deals DICOM ya creados siguen sin salida más
+  que la recuperación.
 
 ## A-03 — Un dataset retirado sigue comprable «gratis» y sin entrega
 
@@ -82,6 +94,11 @@ resultado; no disponible en todo el registro), **NEGOCIO** (quién y cuándo).
   requieren limpieza retroactiva manual (decisión de negocio).
 - Decisión pendiente: ¿se purgan los deals fantasma existentes?
   Responsable: negocio.
+- **Actualización 2026-11-18** (acta, P6 y P25, NEGOCIO: RG/RI): regla de
+  negocio nueva confirmada — *un dataset retirado no debe estar disponible
+  en el catálogo* (hoy el índice nunca se depura, Forms.js:185). La purga
+  retroactiva queda DESCARTADA: «todos los datos se han perdido y no tenían
+  valor» (P25, RI); no hay deals fantasma que cuantificar ni purgar.
 
 ## A-04 — El pago se decide con el índice Firebase, que no está autenticado, y a un owner sin verificar propiedad
 
@@ -113,6 +130,11 @@ resultado; no disponible en todo el registro), **NEGOCIO** (quién y cuándo).
   retirada del versionado); la rotación no es retroactiva: el material ya
   publicado debe considerarse comprometido.
 - Decisión pendiente: ¿rotar credenciales ya? Responsable: negocio.
+- **Actualización 2026-11-18** (acta, P3, NEGOCIO: RS): APLAZADA — «cuando
+  el sistema vaya a producción, se pensará cómo gestionarlo». Información
+  nueva: el negocio no considera el sistema en producción (primera
+  evidencia del estado real de despliegue). La exposición del material
+  versionado persiste mientras tanto (R3 sigue vivo).
 
 ## A-06 — La publicación toca dos sistemas sin atomicidad: contrato e índice pueden quedar a medias
 
@@ -128,6 +150,10 @@ resultado; no disponible en todo el registro), **NEGOCIO** (quién y cuándo).
   sanitizar los ítems a medias ya existentes (DATOS pendiente de arqueología).
 - Decisión pendiente: ¿arqueología de datos del índice vs cadena para
   cuantificar ítems a medias? Responsable: negocio/aporta datos.
+- **Actualización 2026-11-18** (acta, P25, NEGOCIO: RI): DESCARTADA —
+  «todos los datos se han perdido y no tenían valor»; no hay ítems a medias
+  que cuantificar ni sanitizar. La corrección estructural (atomicidad
+  contrato/índice) sigue en modernización.
 
 ## A-07 — El Tutorial promete garantías que el contrato no implementa (plazos de 4/5 días, reenvío tras rechazo, arbitraje, baneos, descentralización total)
 
@@ -150,6 +176,14 @@ resultado; no disponible en todo el registro), **NEGOCIO** (quién y cuándo).
   terceros.
 - Decisión pendiente: ¿cuál es la política real de plazos y disputas:
   5 minutos, 4 días o 5 días? Responsable: negocio.
+- **Actualización 2026-11-18** (acta, P1/P1b y P2, NEGOCIO: RG): RESUELTA —
+  plazo de negocio = **5 días**, aplicado a los DOS relojes (recuperación
+  del comprador desde el pago; cobro del vendedor desde la entrega).
+  El contrato (5 minutos, Marketplace.sol:35) y el Tutorial (4 días,
+  Tutorial.js:86) quedan como desviaciones documentales; la cifra de la UI
+  («up to 5 days», GenomicsForm.js:244-245) era la correcta. Política de
+  disputas: validación automática + apelación humana + dinero congelado
+  hasta veredicto (ver A-01).
 
 ## A-08 — El precio no tiene ninguna validación: 0 es un producto gratuito y NaN revierte en silencio
 
@@ -164,6 +198,10 @@ resultado; no disponible en todo el registro), **NEGOCIO** (quién y cuándo).
 - Tratamiento: corregir en modernización (validación de precio mínimo);
   no retroactivo para precios ya fijados.
 - Decisión pendiente: ¿existe precio mínimo de negocio? Responsable: negocio.
+- **Actualización 2026-11-18** (acta, P9, NEGOCIO: RC): NO existe precio
+  mínimo — el precio 0 es funcionalidad legítima (datasets gratuitos de
+  promoción). El precio 0 deja de ser hallazgo; solo el precio vacío→NaN
+  con fallo silencioso (Forms.js:180) queda como defecto. CERRADA.
 
 ## A-09 — Dos vendedores pueden registrar el mismo CID; el precio global del id lo sobrescribe el último
 
@@ -177,6 +215,12 @@ resultado; no disponible en todo el registro), **NEGOCIO** (quién y cuándo).
   creadas requieren decisión manual.
 - Decisión pendiente: ¿puede el mismo dataset venderse por varios
   propietarios? Responsable: negocio.
+- **Actualización 2026-11-18** (acta, P8 y P16, NEGOCIO: RC/RT): NO —
+  unicidad GLOBAL: solo puede venderlo quien lo registró primero (regla de
+  negocio decidida; el código actual solo la garantiza por vendedor,
+  Marketplace.sol:178). Matiz: la seed, cumpliendo su función declarada
+  (variar el identificador, P16), mitiga de facto el choque de
+  identificadores entre vendedores con el mismo fichero de origen. CERRADA.
 
 ## A-10 — El reparto 95/5 trunca por separado y deja wei sin atribuir
 
@@ -191,6 +235,10 @@ resultado; no disponible en todo el registro), **NEGOCIO** (quién y cuándo).
 - Tratamiento: documentar sin especificar; en modernización, recalcular el
   reparto con un solo truncado.
 - Decisión pendiente: — (requiere DATOS, no decisión).
+- **Actualización 2026-11-18** (acta, P25, NEGOCIO: RI): sin objeto — los
+  datos de operativa pasada se han perdido y no tenían valor; no hay
+  balances reales que consultar. La corrección del reparto sigue en
+  modernización.
 
 ## A-11 — La concesión de vendedores opera por índice desfasado, admite duplicadas zombis y desincroniza UI y contrato
 
@@ -208,6 +256,12 @@ resultado; no disponible en todo el registro), **NEGOCIO** (quién y cuándo).
   Pregunta que la desbloquea: ¿la aprobación por posición es un diseño
   aceptado o un descuido? ¿Debe la aprobación ir por dirección?
   Responsable: negocio.
+- **Actualización 2026-11-18** (acta, P13, NEGOCIO: RG): RESUELTA — la
+  aprobación y el rechazo deben operar **por identidad** (dirección
+  concreta). El diseño actual «por posición» queda clasificado como
+  **descuido** (no diseño aceptado): la parte DUDOSA se cierra como
+  ACCIDENTAL; desincronización y zombis siguen ACCIDENTAL. Corrección en
+  modernización.
 
 ## A-12 — El proyecto no tiene ninguna prueba automatizada viva
 
@@ -253,6 +307,12 @@ resultado; no disponible en todo el registro), **NEGOCIO** (quién y cuándo).
   deliberado, pero solo hay un testigo). Pregunta: ¿el flujo manual
   copiar/reintroducir es una decisión de diseño aceptada o un pendiente de
   automatizar? Responsable: negocio.
+- **Actualización 2026-11-18** (acta, P14, NEGOCIO: RG): flujo manual
+  aceptado de momento; **sustituirlo es prioridad en modernización**.
+  Requisito nuevo de negocio: **las claves solo deben ser accesibles por el
+  vendedor, para nadie más** — el render en claro (Forms.js:578-589)
+  contradice ese requisito. Clasificación cerrada: deuda confirmada con
+  requisito de seguridad añadido (refuerza R13).
 
 ## A-15 — La «seed» que el Tutorial documenta como paso obligatorio no interviene en el cifrado
 
@@ -264,6 +324,13 @@ resultado; no disponible en todo el registro), **NEGOCIO** (quién y cuándo).
 - Clasificación: **PENDIENTE** (DUDOSA). Pregunta: ¿para qué se diseñó la
   seed (¿debía derivar la clave?) y debe mantenerse en la UI?
   Responsable: negocio.
+- **Actualización 2026-11-18** (acta, P16/P16b, NEGOCIO: RT, marcado como
+  creencia): la seed se diseñó **para variar el hash final y evitar
+  identificadores repetidos del mismo dataset** (no para derivar la clave).
+  Se MANTIENE en la UI pero cumpliendo esa función (tarea de modernización:
+  hoy no interviene en nada; la variación ocurre de facto por la clave
+  aleatoria, Forms.js:355). Discrepancia intención/implementación
+  documentada. CERRADA.
 
 ## A-16 — Los plazos que ve el usuario están congelados y pueden salir negativos
 
@@ -332,6 +399,10 @@ resultado; no disponible en todo el registro), **NEGOCIO** (quién y cuándo).
   deliberadamente, pero falta el segundo testigo). Pregunta: ¿es correcta
   la semántica de negocio de cada modo y sus nombres para el usuario?
   Responsable: negocio.
+- **Actualización 2026-11-18** (acta, P15, NEGOCIO: RG): confirmados los
+  DOS modos con sus nombres actuales («partial» = al menos un criterio;
+  «total» = todos). Reclasificada: **INTENCIONAL** (dos testigos: CÓDIGO +
+  NEGOCIO). La divergencia unión/intersección es diseño aceptado. CERRADA.
 
 ## A-21 — server.js está roto por dependencia ausente y su rol productivo nunca se definió
 
@@ -345,6 +416,11 @@ resultado; no disponible en todo el registro), **NEGOCIO** (quién y cuándo).
 - Clasificación: **PENDIENTE** (el fallo de build es ACCIDENTAL; el rol
   previsto es DUDOSA). Pregunta: ¿cuál era el rol productivo previsto de
   server.js y se conserva? Responsable: negocio.
+- **Actualización 2026-11-18** (acta, P17, NEGOCIO: RT, marcado como
+  creencia): server.js fue **banco de pruebas**, sin papel productivo;
+  «creo que montaba (fuera de este repositorio) un clúster IPFS para hacer
+  las pruebas». CERRADA: el fallo de build sigue ACCIDENTAL; el rol
+  previsto queda documentado como pruebas (ver memoria-historica 7).
 
 ## A-22 — Los módulos de búsqueda y de publicación están duplicados (fork completo y ramas internas)
 
@@ -376,6 +452,9 @@ resultado; no disponible en todo el registro), **NEGOCIO** (quién y cuándo).
 - Tratamiento: corregir en modernización (conversión exacta por string);
   los precios ya fijados requieren verificación retroactiva con DATOS.
 - Decisión pendiente: —.
+- **Actualización 2026-11-18** (acta, P25, NEGOCIO: RI): la verificación
+  retroactiva de precios queda SIN OBJETO — datos perdidos y sin valor.
+  La corrección de la conversión sigue en modernización.
 
 ## A-24 — Un comentario cita un contrato MyERC721 que no existe en el proyecto
 
@@ -388,6 +467,10 @@ resultado; no disponible en todo el registro), **NEGOCIO** (quién y cuándo).
 - Clasificación: **PENDIENTE** (DUDOSA). Pregunta: ¿existió o está
   planificado MyERC721? ¿La tokenización sigue en la hoja de ruta?
   Responsable: negocio.
+- **Actualización 2026-11-18** (acta, P19, NEGOCIO: DIR): SIN RESPUESTA
+  CONCLUYENTE — no está decidido si existió o sigue en hoja de ruta. Sigue
+  ABIERTA; pasa a la agenda de la próxima ronda (acta, sección «Pendiente
+  para próxima ronda»).
 
 ## A-25 — El roundtrip de identificador bytes32↔base58 está copiado en diez puntos
 
@@ -480,6 +563,8 @@ resultado; no disponible en todo el registro), **NEGOCIO** (quién y cuándo).
   modernización.
 - Decisión pendiente: ¿conservar como referencia histórica? Responsable:
   negocio.
+- **Actualización 2026-11-18** (acta, P23, NEGOCIO: RT): conservar tal
+  cual como referencia histórica (comentados, sin ejecutar). CERRADA.
 
 ## A-32 — [Anomalía positiva] Reglas protegidas de permisos y catálogo
 
@@ -497,6 +582,11 @@ resultado; no disponible en todo el registro), **NEGOCIO** (quién y cuándo).
 - Clasificación: **PENDIENTE** (candidatas INTENCIONAL; la regla del
   registro exige dos testigos). Pregunta: ¿confirmáis estas reglas como
   reglas de negocio a preservar tal cual? Responsable: negocio.
+- **Actualización 2026-11-18** (acta, P10/P10b, NEGOCIO: RG): CONFIRMADAS
+  las siete con dos testigos → reclasificables como **INTENCIONAL**. Matiz
+  de la regla 6: formulación del negocio = «retirable solo sin compras en
+  curso» (las compras cerradas o recuperadas no bloquean), que coincide
+  con el comportamiento del código. CERRADA.
 
 ## A-33 — [Anomalía positiva] Reglas protegidas de dinero y custodia
 
@@ -515,6 +605,15 @@ resultado; no disponible en todo el registro), **NEGOCIO** (quién y cuándo).
   (1) ¿confirmáis estas reglas tal cual? (2) ¿la entrega debe poder
   reenviarse tras rechazo (RN-20)? (3) ¿el orden transfer/refund es
   aceptable? Responsable: negocio.
+- **Actualización 2026-11-18** (acta, P7/P7b/P7c, NEGOCIO: RG):
+  (1) CONFIRMADAS las seis reglas tal cual (con aclaración registrada:
+  gas ≠ sobrante — el gas va al minero y no es devoluble; el sobrante es
+  dinero del precio que vuelve al comprador) → reclasificables como
+  **INTENCIONAL** (dos testigos). (2) RN-20 (reenvío tras rechazo) queda
+  ABSORBIDA por la política de validación de disputas (P2): el rechazo
+  deja de ser el mecanismo; diseño futuro. (3) El orden
+  transfer-antes-de-estado (R22) queda como observación técnica, sin
+  decisión de negocio. CERRADA.
 
 ## A-34 — [Anomalía positiva] Reglas protegidas de identidad, plazos, cliente y emergencia
 
@@ -531,6 +630,16 @@ resultado; no disponible en todo el registro), **NEGOCIO** (quién y cuándo).
 - Clasificación: **PENDIENTE** (candidatas INTENCIONAL). Preguntas:
   (1) ¿confirmáis estas reglas y constantes tal cual? (2) ¿debe
   conservarse la capacidad destroy/destroyAndSend? Responsable: negocio.
+- **Actualización 2026-11-18** (acta, P11/P11c y P12, NEGOCIO: RG/RS):
+  (1) reglas y constantes CONFIRMADAS (receta física; interruptor de
+  emergencia: «siempre tiene que haber un mecanismo de seguridad»;
+  conversión de identidad, con deseo de unificarla en un punto;
+  refresco de roles deseado — ambos como tareas de modernización), SALVO
+  la frontera de plazos: pasa a **inclusiva** («5 días o más»: en el
+  segundo exacto del vencimiento ya se puede cobrar/recuperar), en
+  contradicción con el `>` estricto actual (Marketplace.sol:290, 311).
+  (2) destroy/destroyAndSend: **SE RETIRA** (R17 queda con decisión de
+  mitigación). CERRADA.
 
 ## A-35 — La red de despliegue objetivo está sin decidir en el código (Rinkeby escrita y comentada)
 
@@ -540,6 +649,10 @@ resultado; no disponible en todo el registro), **NEGOCIO** (quién y cuándo).
   DATOS: no disponible. NEGOCIO: no disponible.
 - Clasificación: **PENDIENTE**. Pregunta: ¿cuál es la red de destino real
   del negocio (mainnet, otra testnet, L2)? Responsable: negocio.
+- **Actualización 2026-11-18** (acta, P20, NEGOCIO: DIR): SIN RESPUESTA
+  CONCLUYENTE — «tenemos que investigar» (mainnet vs red de bajo coste vs
+  local). Sigue ABIERTA; agenda de la próxima ronda, ligada al camino a
+  producción (misma condición que A-05).
 
 ## A-36 — El nodo IPFS remoto (209.250.245.197) fue desactivado sin constancia
 
@@ -550,6 +663,10 @@ resultado; no disponible en todo el registro), **NEGOCIO** (quién y cuándo).
   contiene?). NEGOCIO: no disponible.
 - Clasificación: **PENDIENTE**. Pregunta: ¿fue producción? ¿hay datasets
   reales allí? Responsable: negocio.
+- **Actualización 2026-11-18** (acta, P18, NEGOCIO: RI): nunca fue
+  producción — solo pruebas o nada. CERRADA (queda pendiente de
+  verificación con DATOS solo si se quisiera confirmar que no queda nada
+  accesible; la P25 indica que los datos se perdieron).
 
 ## A-37 — Las advertencias «no tocar» no tienen responsable ni ubicación en la documentación viva
 
@@ -562,6 +679,9 @@ resultado; no disponible en todo el registro), **NEGOCIO** (quién y cuándo).
 - Clasificación: **PENDIENTE** (candidatas INTENCIONAL: son avisos
   deliberados). Pregunta: ¿quién es el responsable operativo de cada
   advertencia (nodo IPFS, workers, soporte)? Responsable: negocio.
+- **Actualización 2026-11-18** (acta, P21, NEGOCIO: DIR): SIN RESPUESTA
+  CONCLUYENTE — no está decidido quién responde de las advertencias. Sigue
+  ABIERTA; agenda de la próxima ronda.
 
 ## A-38 — El proyecto carece de autoría, fechas e historial: nace de un snapshot único
 
@@ -574,6 +694,12 @@ resultado; no disponible en todo el registro), **NEGOCIO** (quién y cuándo).
 - Clasificación: **PENDIENTE**. Preguntas: ¿quién fue el equipo original?
   ¿Existe un repositorio anterior con el historial real? Responsable:
   negocio.
+- **Actualización 2026-11-18** (acta, P22, NEGOCIO: DIR): no existe
+  repositorio ni historial anterior — el snapshot (bbc383e4) es todo lo
+  que hay; la cronología reconstruida en memoria-historica es la única
+  memoria del sistema. La mitad restante (quién fue el equipo original)
+  queda SIN RESPUESTA: el proyecto queda formalmente sin autoría
+  atribuible. CERRADA parcialmente.
 
 ## A-39 — El bilingüismo es deliberado: comentarios históricos en inglés, contenido nuevo en español
 
@@ -616,10 +742,22 @@ resultado; no disponible en todo el registro), **NEGOCIO** (quién y cuándo).
   conmutador).
 - Decisión pendiente: ¿deben poder coexistir ambos roles visibles?
   Responsable: negocio.
+- **Actualización 2026-11-18** (acta, P24/P24a, NEGOCIO: RG): RESUELTA por
+  vía indirecta — regla de negocio nueva: **un admin nunca puede ser
+  vendedor** («no tiene sentido que sea vendedor»); si una cuenta tiene
+  ambos roles, se quita uno. El caso de doble rol desaparece y con él la
+  pregunta de visibilidad. Contradice que el código lo permita (el
+  contrato acepta nombrar data owner a cualquier cuenta). CERRADA.
 
 ---
 
 ## Tabla resumen
+
+> **Nota 2026-11-18**: esta tabla refleja el estado ANTES de la entrevista
+> del 2026-11-18 (se conserva como foto histórica). Las decisiones
+> pendientes que muestra quedaron resueltas, aplazadas o descartadas en la
+> entrevista; el estado vigente de cada entrada es el de su línea
+> «Actualización 2026-11-18» y del acta `entrevista-negocio.md`.
 
 | ID | Clasificación | Tratamiento | Decisión pendiente |
 |----|---------------|-------------|--------------------|
@@ -667,40 +805,31 @@ resultado; no disponible en todo el registro), **NEGOCIO** (quién y cuándo).
 
 ## Lista de clasificaciones PENDIENTES (agenda de la próxima conversación con el negocio)
 
-Esta lista DEBE quedar vacía antes de escribir las specs formales. Para
-vaciarla faltan dos fuentes no disponibles a 2026-11-17: las respuestas de
-`entrevista-negocio.md` (fichero aún inexistente) y la arqueología de
-datos (no ejecutada).
+> **Estado tras la entrevista del 2026-11-18** (acta
+> `entrevista-negocio.md`): de las 13 cuestiones que integraban esta
+> lista, quedaron CERRADAS 9 (A-11, A-14, A-15, A-20, A-21, A-32, A-33,
+> A-34, A-36 y la mitad técnica de A-38), DESCARTADAS por falta de datos
+> las arqueologías (A-03/06/10/23, acta P25) y APLAZADAS A-05 (acta P3).
+> La lista NO queda vacía: las entradas vigentes son las que siguen.
 
-1. **A-11** — ¿La aprobación de vendedores por posición (índice) es diseño
-   aceptado o descuido? ¿Debe ir por dirección?
-2. **A-14** — ¿El flujo manual copiar/reintroducir las claves es decisión
-   de diseño aceptada?
-3. **A-15** — ¿Para qué se diseñó la «seed» y debe mantenerse en la UI?
-4. **A-20** — ¿Son correctas la semántica y los nombres de los dos modos
-   de búsqueda (unión vs intersección)?
-5. **A-21** — ¿Cuál era el rol productivo previsto de server.js?
-6. **A-24** — ¿Existió o está planificado MyERC721? ¿La tokenización sigue
-   en la hoja de ruta?
-7. **A-32** — ¿Se confirman tal cual las reglas protegidas de permisos y
-   catálogo (RN-01, 02, 03, 05, 07, 10, 11, 13)?
-8. **A-33** — ¿Se confirman tal cual las reglas protegidas de dinero y
-   custodia (RN-14, 16-19, 21, 25-27, 29, 31-34, 36)? ¿Debe poder
-   reenviarse la contraseña tras un rechazo (RN-20)? ¿Es aceptable el
-   orden transfer-antes-de-estado del refund?
-9. **A-34** — ¿Se confirman tal cual las reglas y constantes de
-   identidad/plazos/cliente/emergencia (RN-42, 43, 47, 48, 50, 51)? ¿Debe
-   conservarse destroy/destroyAndSend?
-10. **A-35** — ¿Cuál es la red de destino real del negocio?
-11. **A-36** — ¿El nodo IPFS 209.250.245.197 fue producción y contiene
-    datasets reales?
-12. **A-37** — ¿Quién es el responsable operativo de cada advertencia «no
-    tocar» (nodo IPFS, workers, soporte de claves)?
-13. **A-38** — ¿Quién fue el equipo original y existe un repositorio
-    anterior con el historial real?
+**Entradas pendientes vigentes (agenda de la siguiente conversación):**
 
-Preguntas transversales que desbloquean además varias clasificaciones
-finales (necesitan DATOS, no solo palabra): arqueología de deals fantasma
-(A-03), de ítems publicados a medias (A-06), de balances con wei sin
-atribuir (A-10) y de precios reales convertidos (A-23); más `npm audit`
-para cerrar A-13.
+1. **A-24** — ¿Existió o está planificado MyERC721? ¿La tokenización sigue
+   en la hoja de ruta? (acta P19, DIR: sin respuesta concluyente)
+2. **A-35** — ¿Cuál es la red de destino real del negocio (mainnet, L2,
+   otra)? «Tenemos que investigar» (acta P20, DIR)
+3. **A-37** — ¿Quién responde operativo de cada advertencia «no tocar»?
+   (acta P21, DIR: sin respuesta concluyente)
+4. **A-38 (mitad humana)** — ¿Quién fue el equipo original? (acta P22,
+   DIR: sin respuesta concluyente)
+
+**Preguntas nuevas surgidas de la entrevista** (acta, sección «Pendiente
+para próxima ronda»): estado real de la base índice Firebase tras la
+pérdida de datos; existencia y ubicación del clúster IPFS de pruebas
+fuera del repositorio; alcance exacto de la rotación de credenciales en
+el camino a producción; quién ejercerá la apelación humana del sistema de
+validación de disputas; en qué punto implementar la prohibición
+admin-vendedor (solicitud vs concesión).
+
+**Nota técnica no bloqueante**: `npm audit` (A-13) sigue pendiente como
+tarea de análisis estático de dependencias; no requiere negocio.

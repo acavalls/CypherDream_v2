@@ -107,3 +107,20 @@ un hallazgo (ver 5.1).
    reconocimiento del sistema (b623b499), flujo de aplicación (172db6f0),
    registro de riesgos (8b89fae0); decisión del negocio de retirar
    el registro de anomalías (2.2).
+
+---
+
+## 7. Testimonio del negocio del 2026-11-18 (entrevista)
+
+Fuente: acta de entrevista `specs/000-reconocimiento/entrevista-negocio.md`
+(2026-11-18). Son revelaciones del negocio que no estaban documentadas en
+ninguna parte del proyecto ni de esta memoria. Nada se corrige (Principio
+III).
+
+| # | Fecha cierta | Revelación | Quién (rol) | Pregunta del acta |
+|---|--------------|------------|-------------|-------------------|
+| 7.1 | 2026-11-18 | **El sistema no está en producción**: el negocio lo confirma implícitamente al aplazar la gestión de credenciales «cuando el sistema vaya a producción» (P3, RS). Refuerza el carácter de proyecto de pruebas de todo el snapshot | RS | P3 |
+| 7.2 | 2026-11-18 | **Incidente no registrado: todos los datos de la operativa pasada se han perdido y no tenían valor** («todos los datos se han perdidos y no tenían valor», P25, RI). Consecuencia: no hay arqueología posible ni necesaria (deals fantasma, ítems a medias, wei sin atribuir, precios desviados quedan sin cuantificar, y sus tratamientos retroactivos quedan sin objeto) | RI | P25 |
+| 7.3 | 2026-11-18 | **El clúster IPFS de pruebas se montó FUERA de este repositorio** («creo que montaba (fuera de este repositorio) un clúster IPFS para hacer las pruebas», P17, RT; creencia, no certeza). server.js era el banco de pruebas de ese montaje externo, no un servicio productivo. Complementa 2.3 y contradiccion-09 | RT | P17 |
+| 7.4 | 2026-11-18 | **Propósito declarado de la seed** (complementa 1.9): «creo que era justo para cambiar el hash final del dataset en IPFS: si la seed es diferente, no se pueden repetir identificadores, incluso siendo el mismo dataset» (P16, RT; creencia). Intención de diseño que el código no implementa (Forms.js:274-283 la recoge y no la usa) | RT | P16 |
+| 7.5 | 2026-11-18 | **Reglas de negocio nuevas o confirmadas** decididas en la entrevista y no presentes antes en esta memoria: custodia de 5 días en ambos relojes (P1/P1b); disputas por validación automática + apelación humana con dinero congelado (P2); unicidad global del dataset (P8); precio 0 legítimo (P9); baja efectiva en el catálogo (P6); retirable solo sin compras en curso (P10); frontera de plazos inclusiva (P11); destroy retirado (P12); aprobación de vendedores por identidad (P13); claves solo accesibles por el vendedor (P14); prohibido admin-vendedor (P24). Detalle y testigos: acta, sección 1 | RG/RC/RS/RT/RI/DIR | P1-P24 |

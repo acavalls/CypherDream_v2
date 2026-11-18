@@ -39,6 +39,29 @@ Criterio de orden: impacto de negocio × probabilidad, de mayor a menor.
 
 ## Notas de alcance
 
+- **Actualización 2026-11-18** (acta `entrevista-negocio.md`): efecto de
+  la entrevista sobre este registro, sin nuevas entradas (las revelaciones
+  del negocio no generan riesgos no registrados; sí cambian el contexto de
+  los existentes):
+  - **R1/R23**: la política de plazos de negocio es 5 días en ambos
+    relojes (acta P1/P1b) y la de disputas, validación con dinero
+    congelado hasta veredicto (acta P2); los «plazos falsos» que documentan
+    R1 y R23 ahora tienen la cifra correcta identificada (la del Tutorial
+    «4 days» y el contrato «5 minutes» son las desviaciones).
+  - **R2/R5**: los tratamientos retroactivos quedan sin objeto: «todos los
+    datos se han perdido y no tenían valor» (acta P25, RI).
+  - **R3**: aplazado por decisión del negocio al camino a producción
+    (acta P3, RS) pero VIVO: el material sigue versionado y expuesto.
+  - **R13**: reforzado con requisito de negocio nuevo: las claves solo
+    deben ser accesibles por el vendedor, para nadie más (acta P14, RG).
+  - **R17**: decisión de mitigación confirmada: la capacidad
+    destroy/destroyAndSend SE RETIRA (acta P12, RS); el interruptor de
+    emergencia (pausa sin vaciado) se conserva (acta P11, RG).
+  - **R15**: mitigación de facto declarada: la seed, cumpliendo su
+    función de variar el identificador (acta P16, RT), reduce el choque
+    de identificadores a caso casi teórico; la regla de unicidad global
+    se confirma (acta P8, RC).
+
 - No se ejecutó `npm audit` ni se accedió a la red: los avisos de R7 y R21
   se basan en las versiones declaradas (evidencia de ficheros) y en
   conocimiento público de avisos asociados a esas versiones; su

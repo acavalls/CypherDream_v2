@@ -110,6 +110,51 @@ Quedan abiertas solo: **A-24** (tokenización), **A-35** (red de destino),
 (equipo original). Ninguna bloquea las specs formales de la fase actual;
 las tres primeras son decisiones de dirección para el camino a producción.
 
+## 6. Pendiente para próxima ronda
+
+### 6.1 Preguntas sin respuesta concluyente (de esta entrevista)
+
+1. **¿MyERC721/tokenización en hoja de ruta?** (P19, DIR) — origen:
+   A-24, Forms.js:180.
+2. **¿Red de destino del negocio?** (P20, DIR) — origen: A-35,
+   truffle.js:21-35. Condición: «tenemos que investigar».
+3. **¿Responsables operativos de las cuatro advertencias «no tocar»?**
+   (P21, DIR) — origen: A-37.
+4. **¿Quién fue el equipo original?** (P22b, DIR) — origen: A-38 (la
+   mitad técnica quedó cerrada: no hay repositorio previo).
+5. **¿Cuándo y cómo se gestionará la rotación de credenciales?** (P3,
+   RS) — aplazada con condición: «cuando el sistema vaya a producción».
+6. **¿Firebase seguirá siendo la fuente del pago?** (P5, RT) — aplazada
+   a la definición de la arquitectura objetivo.
+
+### 6.2 Preguntas nuevas surgidas durante la entrevista
+
+7. **¿En qué estado exacto quedó la base índice Firebase**
+   (`data-storage123.firebaseio.com`) tras la pérdida de datos: vacía,
+   inaccesible, dada de baja? — surge de P25 (RI); condiciona la
+   decisión de P5 y la regla de baja efectiva del catálogo (P6).
+8. **¿El clúster IPFS de pruebas montado fuera del repositorio sigue
+   existiendo, dónde y con qué datos?** — surge de P17 (RT); complementa
+   A-36 (nodo 209.250.245.197: nunca producción).
+9. **¿Quién ejercerá la apelación humana del sistema de validación de
+   disputas y con qué criterios?** — surge de P2 (RG); define el rol
+   operativo que el Tutorial prometía como «CypherDream» (Tutorial.js:211-213).
+10. **¿La prohibición admin-vendedor (P24) debe bloquearse en la
+    solicitud (el admin no puede ni pedir ser vendedor) o solo en la
+    concesión (el admin no puede ser aprobado)?** — surge de P24 (RG);
+    afecta al diseño de modernización y a RN-04/RN-06.
+11. **¿Qué carteras exactas hay que rotar y cuándo arranca formalmente
+    el camino a producción?** — surge de la condición de P3 (RS); acota
+    el aplazamiento de A-05.
+
+### 6.3 Agenda propuesta
+
+Las cuestiones 1-4 son decisiones de dirección (bloquean solo la hoja de
+ruta, no las specs de la fase actual). Las 5-6 y 11 dependen del camino a
+producción. Las 7-10 son de producto/arquitectura. La lista PENDIENTE del
+registro de anomalías NO queda vacía: su estado actualizado es la
+sección homónima de `registro-de-anomalias.md`.
+
 ---
 
 **Firma metodológica**: entrevista conducida por el consultor (agente),
